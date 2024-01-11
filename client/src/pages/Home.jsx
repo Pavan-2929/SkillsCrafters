@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HomeImage from "../assets/HomeImage.png";
-import Features from "../Components/features";
+import Features from "../Components/Features.jsx";
 import { Link } from "react-router-dom";
 
 const Home = () => {
