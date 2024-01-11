@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HomeImage from "../assets/HomeImage.png";
 import Features from "../Components/features";
 
-const Register = () => {
+const Home = () => {
   return (
     <div>
       <div className="flex justify-around mt-10">
@@ -10,6 +10,7 @@ const Register = () => {
           <div>
             <h1 className="text-4xl mb-8">Welcome to SkillsCrafters,</h1>
           </div>
+          
           <div className="mb-6">
             <p className="text-[1.1rem] mb-4">
               We provide the best IT courses with 24/7 instructor support, live
@@ -42,9 +43,9 @@ const Register = () => {
           />
         </div>
       </div>
-      <Features/>
+      <Features />
     </div>
   );
 };
 
-export default Register;
+export default Home;

@@ -6,6 +6,7 @@ import authRouter from './routes/auth.router.js'
 import contactRouter from './routes/contact.route.js'
 import connectToDB from './utils/dataBase.js'
 import serviceRouter  from "./routes/service.route.js";
+import adminRouter from './routes/admin.route.js'
 
 const app = express()
 app.use(express.json())
@@ -25,6 +26,7 @@ connectToDB().then(() => {
 app.use('/api', serviceRouter)
 app.use('/api/auth', authRouter)
 app.use('/api', contactRouter)
+app.use('/api/admin', adminRouter)
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;

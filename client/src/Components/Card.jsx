@@ -3,9 +3,9 @@ import ServiceImage from "../assets/ServiceImage.png";
 
 function Card({ serviceData }) {
   return (
-    <div className="flex flex-wrap w-[75vw] mx-auto">
+    <div className="flex flex-wrap sm:w-[75vw] w-full mx-auto">
       {serviceData.map((service, index) => (
-        <div key={index} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/3 p-6">
+        <div key={index} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/3 p-6 mb-10">
           <div className="flex flex-col h-full bg-[#414141] text-[#ccc] border border-purple-700 rounded-lg shadow-lg p-6">
             <img
               src={ServiceImage}

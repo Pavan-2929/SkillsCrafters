@@ -9,15 +9,17 @@ function Service() {
     const response = await axios.get("http://localhost:3000/api/service");
     setServiceData(response.data);
   };
-  console.log(serviceData);
 
   useEffect(() => {
     fetchServiceData();
   }, []);
   
   return (
-    <div>
-      <Card serviceData={serviceData}/>
+    <div className="pt-10  border-t-2">
+      <div className="text-center text-3xl font-bold mb-8">
+        Explore the Best Courses Around the World
+      </div>
+      <Card serviceData={serviceData} />
     </div>
   );
 }

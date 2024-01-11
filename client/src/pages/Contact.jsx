@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ContactImage from "../assets/ContactImage.png";
 import { useAuth } from "../store/Auth";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const URL = "http://localhost:3000/api/contact";
@@ -30,17 +31,15 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-
   const handleContactSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(URL, formData);
-      console.log(response.data);
-      alert("Thanx for contacting")
+      toast.success("Thanx for contacting");
     } catch (error) {
-      console.log(error); 
-      alert("Something went wrong")
+      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
@@ -117,8 +116,11 @@ const Contact = () => {
         </div>
 
         <div className="mb-16">
-          <button type="submit" className="bg-purple-700 text-white p-2 mt-2">
-            Register Now
+          <button
+            type="submit"
+            className="bg-purple-700 text-white p-2 mt-5 hover:bg-purple-900 rounded"
+          >
+            Contact Us
           </button>
         </div>
       </form>

@@ -9,16 +9,17 @@ export const verifyToken = async (req, res, next) => {
   }
 
   const jwtToken = token.replace("Bearer ", "").trim();
-  console.log(jwtToken);
 
   try {
     const isVerified = jwt.verify(jwtToken, process.env.JWT_SECRET_KEY);
 
     const userData = await User.findOne({ email: isVerified.email }).select({password:0});
 
-    req.user = userData;
-    req.token = token;
-    req.userIdD = userData._id
+    if(userData){
+          req.user = userData;
+          req.token = token;
+          req.userIdD = userData._id;
+    }
 
 
     next();

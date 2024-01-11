@@ -3,6 +3,7 @@ import RegisterImage from "../assets/RegisterImage.png";
 import axios from "axios";
 import { useAuth } from "../store/Auth";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const URL = "http://localhost:3000/api/auth/register";
 
@@ -22,23 +23,21 @@ const Register = () => {
     try {
       const response = await axios.post(URL, formData)
 
-      console.log(response.status);
-
       if(response.status === 201){
       storeTokenInLS(response.data.token);
-        alert("Registration Successfully")
+        toast.success("Registration Successfully")
         setFormData('')
         navigate('/')
       }
       else{
-        alert("Something went wrong")
+        toast.error("Something went wrong")
       }
     } catch (error) {
       if(error.message){
-        alert(`${error.response.data.message}`)
+        toast.error(`${error.response.data.message}`)
       }
       else{
-        alert('Internal Server error')
+        toast.error('Internal Server error')
       }
     }
 
@@ -121,8 +120,11 @@ const Register = () => {
         </div>
 
         <div className="mb-16">
-          <button type="submit" className="bg-purple-700 text-white p-2 mt-5">
-            Register Now
+          <button
+            type="submit"
+            className="bg-purple-700 text-white p-2 mt-5 hover:bg-purple-900 rounded"
+          >
+Register Now
           </button>
         </div>
       </form>

@@ -3,6 +3,7 @@ import RegisterImage from "../assets/RegisterImage.png";
 import axios from "axios";
 import { useAuth } from "../store/Auth";
 import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify'
 
 const URL = "http://localhost:3000/api/auth/login";
 
@@ -22,32 +23,32 @@ const handleLoginChange = async (e) => {
   try {
     const response = await axios.post("http://localhost:3000/api/auth/login", formData)
 
-    console.log(response);
+    // console.log(response);
 
     if(response.status === 200){
       navigate('/')
       setFormData('')
-      alert("Login success")
+      toast.success("Login success")
       storeTokenInLS(response.data.token)
     }
     else{
-      alert("Login failed. Please try again")
+      toast.error("Login failed. Please try again")
     }
   } catch (error) {
     console.log(error)
     
     if(error.response){
-      alert(` ${error.response.data.message}`)
+      toast.error(` ${error.response.data.message}`)
     }
     else{
-      alert("Internal Server error")
+      toast.error("Internal Server error")
     }
   }
 };
 
 
   return (
-    <div className="flex justify-around mt-8">
+    <div className="flex justify-around mt-2">
       <div className="hidden lg:flex items-center">
         <img src={RegisterImage} alt="Register" className="w-[25rem] h-auto" />
       </div>
@@ -85,7 +86,7 @@ const handleLoginChange = async (e) => {
         </div>
 
         <div>
-          <button type="submit" className="bg-purple-700 text-white p-2 mt-5">
+          <button type="submit" className="bg-purple-700 text-white p-2 mt-5 hover:bg-purple-900 rounded">
             Login Now
           </button>
         </div>
