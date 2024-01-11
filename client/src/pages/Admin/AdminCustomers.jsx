@@ -10,7 +10,7 @@ function AdminCustomers() {
   const getAllCustomers = async () => {
     try {
       const allCustomers = await axios.get(
-        "http://localhost:3000/api/admin/services/customers",
+        "https://skillscrafters-backend.onrender.com/api/admin/services/customers",
         {
           headers: {
             Authorization: AuthorizeToken,

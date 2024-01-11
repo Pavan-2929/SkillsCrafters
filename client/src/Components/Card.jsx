@@ -21,7 +21,7 @@ function Card({ serviceData }) {
           };
           setAllInfo(combinedObj);
           const newCustomer = await axios.post(
-            "http://localhost:3000/api/service/customer",
+            "https://skillscrafters-backend.onrender.com/api/service/customer",
             allInfo
           );
 
