@@ -1,5 +1,5 @@
 import express from 'express'
-import  {getContactDataControllers, getUsersController, deleteUser,getUserById, updateUserById, deleteContact, getServiceData, deleteService, createService}  from '../controllers/admin.controller.js';
+import  {getContactDataControllers, getUsersController, deleteUser,getUserById, updateUserById, deleteContact, getServiceData, deleteService, createService, getCustomers}  from '../controllers/admin.controller.js';
 import { verifyToken } from '../utils/verifyToken.js';
 import { adminMiddleware } from '../utils/adminMiddleware.js';
 
@@ -18,6 +18,7 @@ router.delete('/contacts/delete/:id', verifyToken, adminMiddleware, deleteContac
 router.get('/services', verifyToken, adminMiddleware, getServiceData)
 router.delete('/services/delete/:id', verifyToken, adminMiddleware, deleteService)
 router.post('/services/create', verifyToken, adminMiddleware, createService)
+router.get('/services/customers', verifyToken, adminMiddleware, getCustomers)
 
 export default router
 

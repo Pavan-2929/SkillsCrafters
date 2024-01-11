@@ -1,7 +1,8 @@
+import Customer from "../models/customers.model.js";
 import Service from "../models/service.model.js"
 
 
-const serviceController = async (req, res, next) => {
+export const serviceController = async (req, res, next) => {
 
     try {
         const response = await Service.find({})
@@ -12,4 +13,13 @@ const serviceController = async (req, res, next) => {
     }
 }
 
-export default serviceController
+export const customerController = async (req, res, next) => {
+    const {firstName, lastName, email, service, price, provider} = req.body
+    try {
+        const customer = await Customer.create({firstName, lastName, email, service, price, provider})
+
+        res.status(200).json(customer)
+    } catch (error) {
+        next(error)
+    }
+}

@@ -2,6 +2,7 @@ import Contact from "../models/contact.model.js";
 import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 import Service from "../models/service.model.js";
+import Customer from "../models/customers.model.js";
 
 export const getUsersController = async (req, res, next) => {
   try {
@@ -122,5 +123,18 @@ export const createService = async (req, res, next) => {
   } catch (error) {
     next(error)
     console.log(error);
+  }
+}
+
+export const getCustomers = async (req, res, next) => {
+  try {
+    const allCustomers = await Customer.find()
+
+    if(!allCustomers || allCustomers.length === 0) {
+      res.status(404).json("Customers not found")
+    }
+    res.status(200).json(allCustomers)
+  } catch (error) {
+    next(error)
   }
 }

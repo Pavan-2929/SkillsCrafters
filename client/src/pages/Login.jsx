@@ -88,7 +88,7 @@ const handleLoginChange = async (e) => {
         </div>
 
         <div>
-          <button type="submit" className="bg-purple-700 text-white p-2 mt-5 hover:bg-purple-900 rounded">
+          <button type="submit" className="bg-purple-700 text-white p-2 mt-5 mb-10 hover:bg-purple-900 rounded">
             Login Now
           </button>
         </div>

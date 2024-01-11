@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const serviceSchema = mongoose.Schema({
     service: {
         type: String,
-        required: "true",
+        required: true,
     },
     description: {
         type: String,

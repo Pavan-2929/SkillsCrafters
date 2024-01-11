@@ -54,11 +54,20 @@ const AdminServices = () => {
       <div>
         <button
           type="submit"
-          className="bg-purple-700 text-white p-2 mb-8 hover:bg-purple-900 rounded"
+          className="bg-purple-700 mx-5 text-white p-2 mb-8 hover:bg-purple-900 rounded"
 
         >
           <Link to='/admin/services/create'>
           Add new Service
+          </Link>
+        </button>
+        <button
+          type="submit"
+          className="bg-purple-700 text-white p-2 mb-8 hover:bg-purple-900 rounded"
+
+        >
+          <Link to='/admin/services/customers'>
+            All Customers
           </Link>
         </button>
       </div>
