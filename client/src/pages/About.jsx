@@ -1,6 +1,6 @@
 import React from "react";
 import Accordion from "../Components/Accordion";
-import Features from "../Components/features";
+import Features from "../Components/Features.jsx";
 
 function About() {
   const accordionItems = [
