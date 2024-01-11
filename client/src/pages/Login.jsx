@@ -5,7 +5,6 @@ import { useAuth } from "../store/Auth";
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
 
-const URL = "http://localhost:3000/api/auth/login";
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -21,7 +20,10 @@ const handleLoginChange = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.post("http://localhost:3000/api/auth/login", formData)
+    const response = await axios.post(
+      "https://skillscrafters-backend.onrender.com/api/auth/login",
+      formData
+    );
 
     // console.log(response);
 

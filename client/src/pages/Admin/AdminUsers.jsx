@@ -11,7 +11,7 @@ const AdminUsers = () => {
   const getAllUserData = async () => {
     try {
       const allUsers = await axios.get(
-        "http://localhost:3000/api/admin/users",
+        "https://skillscrafters-backend.onrender.com/api/admin/users",
         {
           headers: {
             Authorization: AuthorizeToken,
@@ -27,7 +27,7 @@ const AdminUsers = () => {
   const handleDeleteUser = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/admin/users/delete/${id}`,
+        `https://skillscrafters-backend.onrender.com/api/admin/users/delete/${id}`,
         {
           headers: {
             Authorization: AuthorizeToken,

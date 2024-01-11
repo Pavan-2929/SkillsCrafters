@@ -11,7 +11,7 @@ const AdminServices = () => {
   const getAllServiceData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/admin/services",
+        "https://skillscrafters-backend.onrender.com/api/admin/services",
         {
           headers: {
             Authorization: AuthorizeToken,
@@ -29,10 +29,11 @@ const AdminServices = () => {
   const serviceDelete = async (id) => {
     try {
       const deletedService = await axios.delete(
-        `http://localhost:3000/api/admin/services/delete/${id}`,{
+        `https://skillscrafters-backend.onrender.com/api/admin/services/delete/${id}`,
+        {
           headers: {
-            Authorization: AuthorizeToken
-          }
+            Authorization: AuthorizeToken,
+          },
         }
       );
       getAllServiceData()

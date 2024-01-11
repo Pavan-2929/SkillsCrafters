@@ -30,11 +30,14 @@ export const AuthProvider = ({children}) => {
     const userAuthentication = async () => {
       try {
         setIsLoading(true)
-        const response = await axios.get("http://localhost:3000/api/auth/user", {
-          headers:{
-            Authorization: AuthorizeToken
-          },
-        });
+        const response = await axios.get(
+          "https://skillscrafters-backend.onrender.com/api/auth/user",
+          {
+            headers: {
+              Authorization: AuthorizeToken,
+            },
+          }
+        );
         setUser(response.data)
         setIsLoading(false)
       } catch (error) {

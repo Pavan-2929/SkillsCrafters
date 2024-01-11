@@ -10,7 +10,7 @@ const AdminContacts = () => {
   const getAllContactsData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/admin/contacts",
+        "https://skillscrafters-backend.onrender.com/api/admin/contacts",
         {
           headers: {
             Authorization: AuthorizeToken,
@@ -27,7 +27,7 @@ const AdminContacts = () => {
   const deleteContact = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/admin/contacts/delete/${id}`,
+        `https://skillscrafters-backend.onrender.com/api/admin/contacts/delete/${id}`,
         {
           headers: {
             Authorization: AuthorizeToken,

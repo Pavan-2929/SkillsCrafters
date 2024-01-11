@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const AdminUsersUpdate = () => {
   const { AuthorizeToken } = useAuth();
   const params = useParams();
-  const URL = `http://localhost:3000/api/admin/users/${params.id}`;
+  const URL = `https://skillscrafters-backend.onrender.com/api/admin/users/${params.id}`;
 
   const defaultFormData = {
     firstName: "",
@@ -20,7 +20,7 @@ const AdminUsersUpdate = () => {
   const userData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/admin/users/${params.id}`,
+        `https://skillscrafters-backend.onrender.com/api/admin/users/${params.id}`,
         {
           headers: {
             Authorization: AuthorizeToken,
@@ -47,7 +47,7 @@ const handleUpdate = async (e) => {
 
   try {
     const response = await axios.patch(
-      `http://localhost:3000/api/admin/users/update/${params.id}`,
+      `https://skillscrafters-backend.onrender.com/api/admin/users/update/${params.id}`,
       formData,
       {
         headers: {

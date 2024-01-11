@@ -5,7 +5,7 @@ import { useAuth } from "../store/Auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:3000/api/auth/register";
+// const URL = "https://skillscrafters-backend.onrender.com/api/auth/register";
 
 const Register = () => {
 
@@ -21,7 +21,10 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(URL, formData)
+      const response = await axios.post(
+        "https://skillscrafters-backend.onrender.com/api/auth/register",
+        formData
+      );
 
       if(response.status === 201){
       storeTokenInLS(response.data.token);

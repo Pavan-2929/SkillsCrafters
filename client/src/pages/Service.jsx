@@ -6,7 +6,9 @@ function Service() {
   const [serviceData, setServiceData] = useState([]);
 
   const fetchServiceData = async () => {
-    const response = await axios.get("http://localhost:3000/api/service");
+    const response = await axios.get(
+      "https://skillscrafters-backend.onrender.com/api/service"
+    );
     setServiceData(response.data);
   };
 

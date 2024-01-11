@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HomeImage from "../assets/HomeImage.png";
 import Features from "../Components/features";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -28,10 +29,11 @@ const Home = () => {
           </div>
           <div>
             <button className="px-8 py-2 bg-purple-700 text-white rounded-md mr-4 shadow-lg shadow-gray-500/50">
-              Contact
+              <Link to='/contact'>
+              Contact</Link>
             </button>
             <button className="px-8 py-2  text-[#CCC] rounded-md border-purple-700 border shadow-lg shadow-gray-500/50">
-              Service
+              <Link to='/service'>Service</Link>
             </button>
           </div>
         </div>

@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Contact = () => {
-  const URL = "http://localhost:3000/api/contact";
+  const URL = "https://skillscrafters-backend.onrender.com/api/contact";
   const defaultContactData = {
     firstName: "",
     lastName: "",

@@ -16,9 +16,6 @@ function AdminLayout() {
 
   return (
     <div className="min-h-screen text-center text-[1.2rem]  text-white border-t-2">
-      {/* <div className="text-4xl  py-4">
-        <div className=" my-4">Admin Panel</div>
-      </div> */}
       <nav className="bg-[#414141] p-4 font-bold border-gray-300 border mt-5">
         <div className="container mx-auto flex justify-around">
           <NavLink

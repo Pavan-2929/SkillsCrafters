@@ -25,7 +25,7 @@ const AdminCreateService = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/admin/services/create",
+        "https://skillscrafters-backend.onrender.com/api/admin/services/create",
         formData,
         {
           headers: {
